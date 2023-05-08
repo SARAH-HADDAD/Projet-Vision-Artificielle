@@ -14,8 +14,8 @@ def show_image(img, name='Image'):
     cv2.destroyAllWindows()
 
 # Acquérir deux images en effectuant un mouvement de translation sur un plan:
-imgL = cv2.imread('./pics/im1.jpg')
-imgR = cv2.imread('./pics/im2.jpg')
+imgL = cv2.imread('image1.jpg')
+imgR = cv2.imread('image2.jpg')
 
 imgL = cv2.resize(imgL,(1000, 800))
 imgR = cv2.resize(imgR,(1000, 800))
@@ -57,7 +57,6 @@ for m,n in matches:
             ul_list.append(kp1.pt[0])
             ur_list.append(kp2.pt[0])
 
-
 query_pts = np.float32([kpL[m[0].queryIdx].pt for m in good ]).reshape(-1, 1, 2)
 train_pts = np.float32([kpR[m[0].trainIdx].pt for m in good ]).reshape(-1, 1, 2)
 
@@ -70,7 +69,6 @@ for m in good:
     if matches[i]:
         ransac_good.append(m)
     i=i+1
-
 
 good = ransac_good
 
@@ -97,7 +95,7 @@ Z = np.array(Z)
 
 # Affichez les points 3D dans un nuage de points 3D:
 
-fig = plt.figure(figsize=(8,8))
+fig = plt.figure(figsize=(7,7))
 ax = fig.add_subplot(111, projection='3d')
 
 # Customize the appearance of the scatter plot
