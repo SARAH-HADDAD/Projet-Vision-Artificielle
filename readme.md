@@ -1,4 +1,5 @@
-# This code performs a 3D reconstruction using stereo vision with two images taken from different perspectives. 
+# About this Project:
+This code performs a 3D reconstruction using stereo vision with two images taken from different perspectives. 
 #### Here are the main steps:
 ##### The camera is calibrated by loading the intrinsic parameters from a file.
 ##### Two images are acquired and resized to a common size.
